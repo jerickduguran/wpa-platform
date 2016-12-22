@@ -26,9 +26,26 @@ class AppKernel extends Kernel
 			new Sonata\BlockBundle\SonataBlockBundle(),
 			new Knp\Bundle\MenuBundle\KnpMenuBundle(),			
 			new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+			
+			new Sonata\SeoBundle\SonataSeoBundle(),
+			new Sonata\PageBundle\SonataPageBundle(),
+            new Sonata\CacheBundle\SonataCacheBundle(),	
+            new Sonata\NotificationBundle\SonataNotificationBundle(),	
+			new Sonata\MediaBundle\SonataMediaBundle(),	
+			new Sonata\NewsBundle\SonataNewsBundle(),	
+			
+			new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+			new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+			new Sonata\FormatterBundle\SonataFormatterBundle(),
 
 			
+			new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
+            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
+            new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+			new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+			new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
 			
 			//SonataAdminBundle
 			new Sonata\AdminBundle\SonataAdminBundle(),

@@ -3,3 +3,4 @@
 /var/logs
 /app/cache
 /app/logs/*
+/web/bundles/*

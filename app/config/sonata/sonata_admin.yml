@@ -26,8 +26,8 @@ sonata_admin:
             - MASTER
             - OWNER
         acl_user_manager:     null
-    title:                'Sonata Admin'
-    title_logo:           bundles/sonataadmin/logo_title.png
+    title:                'WPA Project'
+    title_logo:           bundles/app/images/logo_wpa.png
     options:
         html5_validate:       true
 
@@ -41,7 +41,7 @@ sonata_admin:
         pager_links:          5
         form_type:            standard
         dropdown_number_groups_per_colums:  2
-        title_mode:           single_image #One of "single_text"; "single_image"; "both"
+        title_mode:           "both" #single_image #One of "single_text"; "single_image"; "both"
 
         # Enable locking when editing an object, if the corresponding object manager supports it.
         lock_protection:      false
@@ -120,7 +120,12 @@ sonata_admin:
             - bundles/sonataadmin/css/layout.css
             - bundles/sonataadmin/css/tree.css
             - bundles/sonataadmin/css/colors.css
-            - bundles/sonatapage/sonata-page.back.min.css
+            - bundles/sonatapage/sonata-page.back.min.css 
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+
         javascripts:
 
             # Defaults:
@@ -143,15 +148,12 @@ sonata_admin:
             - bundles/sonataadmin/Admin.js
             - bundles/sonataadmin/treeview.js     
             - bundles/sonatapage/sonata-page.back.min.js
-    extensions:
+            - bundles/sonataformatter/vendor/ckeditor/ckeditor.js 
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
 
-        # Prototype
-        id:
-            admins:               []
-            excludes:             []
-            implements:           []
-            extends:              []
-            instanceof:           []
-            uses:                 []
+    extensions: 
     persist_filters:      false
     show_mosaic_button:   true

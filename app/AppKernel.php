@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 			  
 			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-			 
+			new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
 			new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'), 
 

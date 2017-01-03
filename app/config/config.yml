@@ -48,6 +48,7 @@ twig:
     strict_variables: "%kernel.debug%"
     form_themes:
         - 'SonataFormatterBundle:Form:formatter.html.twig'
+        - 'SonataCoreBundle:Form:datepicker.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -78,3 +79,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            # enable the DynamicRouter with high priority to allow overwriting configured routes with content
+            #symfony_cmf_routing_extra.dynamic_router: 200
+            # enable the symfony default router with a lower priority
+            sonata.page.router: 150 
+            router.default: 100

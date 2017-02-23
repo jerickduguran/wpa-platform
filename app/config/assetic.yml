@@ -1,0 +1,8 @@
+sonata_page:
+    assets:
+        stylesheets:
+            - bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
+            - bundles/app/css/style.css
+        javascripts:
+            - /bundles/sonatacore/vendor/jquery/dist/jquery.min.js
+            - /bundles/sonatacore/vendor/bootstrap/dist/js/bootstrap.min.js

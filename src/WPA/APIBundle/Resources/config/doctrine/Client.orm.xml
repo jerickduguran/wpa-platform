@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="WPA\APIBundle\Repository\ClientRepository" name="WPA\APIBundle\Entity\Client" table="wpa__api_client">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+	<field name="name" column="name" type="string" length="60"/>
+	
+	<one-to-many field="accessTokens" target-entity="WPA\APIBundle\Entity\AccessToken" mapped-by="client">
+		<cascade>
+			<cascade-persist/>
+		</cascade>
+	</one-to-many>
+
+	<one-to-many field="refreshTokens" target-entity="WPA\APIBundle\Entity\RefreshToken" mapped-by="client">
+		<cascade>
+			<cascade-persist/>
+		</cascade>
+	</one-to-many>
+
+	<field name="createdAt" type="datetime" column="created_at"/>
+	<field name="updatedAt" type="datetime" column="updated_at"/>
+
+	<lifecycle-callbacks>
+		<lifecycle-callback type="prePersist" method="prePersist"/>
+		<lifecycle-callback type="preUpdate"  method="preUpdate"/>
+	</lifecycle-callbacks>
+  </entity>
+</doctrine-mapping>

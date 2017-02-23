@@ -15,7 +15,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-			  
+			new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 			new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
@@ -47,10 +47,19 @@ class AppKernel extends Kernel
 			new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
 			new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
 			
+			new JMS\SerializerBundle\JMSSerializerBundle(),
+			
+			#FOS
+			new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+			
+			new Sonata\IntlBundle\SonataIntlBundle(),
+			
 			//SonataAdminBundle
 			new Sonata\AdminBundle\SonataAdminBundle(),
 
             new AppBundle\AppBundle(),
+            new WPA\APIBundle\WPAAPIBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

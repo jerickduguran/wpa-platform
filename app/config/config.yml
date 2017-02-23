@@ -1,8 +1,9 @@
 imports:
     - { resource: parameters.yml }
-    - { resource: security.yml } 
+    - { resource: security.yml }
 
     # SONATA #
+    - { resource: assetic.yml }
     - { resource: sonata/sonata_user.yml }
     - { resource: sonata/sonata_admin.yml }
     - { resource: sonata/sonata_block.yml }
@@ -13,7 +14,11 @@ imports:
     - { resource: sonata/sonata_news.yml }
     - { resource: sonata/sonata_formatter.yml }
     # FOS #
-    - { resource: fos/fos_user.yml }
+    - { resource: fos/fos_user.yml } 
+    - { resource: fos/fos_rest.yml } 
+    - { resource: fos/fos_oauth_server.yml } 
+    - { resource: "@WPAAPIBundle/Resources/config/services.xml" }
+    - { resource: "@FOSOAuthServerBundle/Resources/config/security.xml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -80,12 +85,11 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-
 cmf_routing:
     chain:
         routers_by_id:
             # enable the DynamicRouter with high priority to allow overwriting configured routes with content
             #symfony_cmf_routing_extra.dynamic_router: 200
             # enable the symfony default router with a lower priority
-            sonata.page.router: 150 
+            sonata.page.router: 150
             router.default: 100
